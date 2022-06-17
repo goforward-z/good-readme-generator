@@ -4,11 +4,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
-const promptUser = () =>
-    inquirer.prompt([
+const questions = [
         {
             type: 'input',
             name: 'project',
@@ -55,7 +53,7 @@ const promptUser = () =>
             name: 'email',
             message: 'What is your email address?',
         },
-    ]);
+    ]
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
